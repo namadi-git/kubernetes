@@ -16,6 +16,9 @@ sudo su << EOF
 sudo yum update -y
 sudo yum install docker -y
 sudo yum install -y kubeadm kubelet kubectl
+sudo systemctl enable docker
 sudo systemctl start docker
+sudo systemctl enable kubelet
 sudo systemctl start kubelet
 EOF
+sudo reboot

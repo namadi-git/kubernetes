@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region  = "us-east-1"
-  profile = "yusuf"
+ region  = "us-east-2"
+  profile = "nelson_admin_profile"
 }
 
 
@@ -126,7 +126,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t2.medium"
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group2.id]
-  key_name               = "devopskeypair"
+  key_name               = "cloud_convo_key_pair"
   user_data = "${file("install_k8s.sh")}"
   count                  = 3
 
